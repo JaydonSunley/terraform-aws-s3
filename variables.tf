@@ -9,11 +9,11 @@ variable "bucket_key"{
 }
 
 variable "create_logging_bucket" {
-  description = "If true, neo gets full access to CloudWatch"
+  description = "If true, logging_bucket will be the name of the new logging bucket created"
   type        = bool
 }
 
 variable "public_access" {
-  description = "If true, neo gets full access to CloudWatch"
+  description = "If true, public access will not be blocked during s3 creation"
   type        = bool
 }
