@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "s3" {
+resource "aws_s3_bucket" "s3_nolog" {
     count = var.create_logging_bucket ? 0 : 1
     bucket = var.bucket_key
     acl = "private"
@@ -44,7 +44,7 @@ resource "aws_s3_bucket" "logging_bucket" {
   }
 }
 
-resource "aws_s3_bucket" "s3" {
+resource "aws_s3_bucket" "s3_log" {
     count = var.create_logging_bucket ? 1 : 0
     bucket = var.bucket_key
     acl = "private"
