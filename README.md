@@ -11,6 +11,6 @@ module "s3" {
   bucket_key            = "aws_bucket"
   logging_bucket        = "aws_log_bucket"
   create_logging_bucket = false # Uses the logging_bucket name to create the logging bucket
-  public_access         = false # If false, apply public access restrictions to the bucket
+  public_access         = false # If false, this apply public access restrictions to the bucket
 }
 ```
