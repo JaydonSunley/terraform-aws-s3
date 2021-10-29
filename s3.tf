@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "s3_nolog" {
   }
 
   logging {
-    target_bucket = data.aws_s3_bucket.logging.id
+    target_bucket = var.logging_bucket
     target_prefix = var.bucket_key
   }
 
