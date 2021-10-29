@@ -8,10 +8,10 @@ The logging bucket must already exist.
 ```hcl
 module "s3" {
   source                = "JoelsHub/s3/aws"
-  version               = "1.2.0"
+  version               = "2.2.0"
   bucket_key            = "Test Bucket"
   logging_bucket        = "Test Logging Bucket"
-  create_logging_bucket = "true"
-  public_access         = "true"
+  create_logging_bucket = false
+  public_access         = false
 }
 ```
