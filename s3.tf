@@ -80,7 +80,7 @@ resource "aws_s3_bucket_public_access_block" "s3_Access_log" {
 
 resource "aws_s3_bucket_public_access_block" "s3_Access_nolog" {
     count = var.public_access ? 0 : 1
-    bucket = aws_s3_bucket.s3_nolog[0].id
+    bucket = var.bucket_key
     
     block_public_acls   = true
     block_public_policy = true
