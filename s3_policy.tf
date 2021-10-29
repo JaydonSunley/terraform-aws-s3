@@ -1,4 +1,4 @@
-resource "aws_s3_bucket_policy" "bucket_policy_nolog" {
+resource "aws_s3_bucket_policy" "bucket_policy_log" {
     count = var.create_logging_bucket ? 1 : 0
   bucket = aws_s3_bucket.s3_nolog.id
   policy = jsonencode(
