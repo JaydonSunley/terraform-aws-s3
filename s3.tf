@@ -54,7 +54,7 @@ resource "aws_s3_bucket" "s3_log" {
   }
 
   logging {
-    target_bucket = aws_s3_bucket.logging_bucket[count.index].id
+    target_bucket = aws_s3_bucket.logging_bucket[0].id
     target_prefix = var.bucket_key
   }
 
@@ -70,7 +70,7 @@ resource "aws_s3_bucket" "s3_log" {
 
 resource "aws_s3_bucket_public_access_block" "s3_Access_log" {
     count = var.public_access ? 0 : 1
-    bucket = aws_s3_bucket.s3_log[count.index].id
+    bucket = aws_s3_bucket.s3_log[0].id
     
     block_public_acls   = true
     block_public_policy = true
@@ -80,7 +80,7 @@ resource "aws_s3_bucket_public_access_block" "s3_Access_log" {
 
 resource "aws_s3_bucket_public_access_block" "s3_Access_nolog" {
     count = var.public_access ? 0 : 1
-    bucket = aws_s3_bucket.s3_nolog[count.index].id
+    bucket = aws_s3_bucket.s3_nolog[0].id
     
     block_public_acls   = true
     block_public_policy = true
