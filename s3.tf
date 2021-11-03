@@ -77,7 +77,7 @@ resource "aws_s3_bucket_public_access_block" "s3_Access_nolog" {
     restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket_public_access_block" "s3_Access_nolog" {
+resource "aws_s3_bucket_public_access_block" "s3_Access_log" {
     count = var.create_logging_bucket ? 1 : 0
     bucket = var.logging_bucket
     
