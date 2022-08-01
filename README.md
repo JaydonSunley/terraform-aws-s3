@@ -6,8 +6,8 @@ Terraform module which creates an S3 bucket with logging and a policy for secure
 
 ```hcl
 module "s3" {
-  source                = "JoelsHub/s3/aws"
-  version               = "1.0.0"
+  source                = "shadbury/s3/aws"
+  version               = "1.0.2"
   bucket_key            = "aws_bucket"
   logging_bucket        = "aws_log_bucket"
   create_logging_bucket = false # Set to false if a logging bucket already exists
